@@ -10,7 +10,10 @@ const Search = (props) => {
 
      const classes = useStyles()
 
-     const handleClick = () => { getData() }
+     const handleClick = (e) => { 
+          e.preventDefault()
+          getData() 
+     }
 
      return (
                <form>
