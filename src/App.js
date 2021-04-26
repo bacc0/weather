@@ -23,20 +23,18 @@ const App = () => {
 	const [icon        ,         setIcon] = useState('')
 	const [typeUnit    ,     setTypeUnit] = useState('Metric')
 	const [descriptions, setDescriptions] = useState('')
-	const [search      ,       setSearch] = useState('')
+	const [search      ,       setSearch] = useState('')    //  city name
 	const [errors      ,       setErrors] = useState(false)
 	const [currentCity ,  setCurrentCity] = useState('London')
-	const [currentPlace, setCurrentPlace] = useState('')
-	const [view        ,         setView] = useState(true)
-	const [forecast    ,     setForecast] = useState(false)
-	const [forecastArr ,  setForecastArr] = useState({})
+	const [currentPlace, setCurrentPlace] = useState('')     //  current City short description
+	const [view        ,         setView] = useState(true)   //  display temperature
+	const [forecast    ,     setForecast] = useState(false)  //  display temperatures forecast
+	const [forecastArr ,  setForecastArr] = useState({})     //  Forecast 4days data
 	const [value       ,        setValue] = useState(0);
 
 	const API_KEY ='b1fdaa13bc3fcfdccc5f3d96033840ab'
 
 	useEffect(() => { setForecast(false) }, [search])
-
-	const city = search
 
 	const fetchData = ( api, type, save ) => {
 
@@ -53,12 +51,13 @@ const App = () => {
 			saveData(data, save)
 
 				}
-			})
+			}
+		)
 	}
 
 	const getData = () => {
 
-		fetchData(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${typeUnit === 'Imperial' ? 'imperial' : 'metric'}&appid=${API_KEY}`, 
+		fetchData(`https://api.openweathermap.org/data/2.5/weather?q=${search}&units=${typeUnit === 'Imperial' ? 'imperial' : 'metric'}&appid=${API_KEY}`, 
 			'search', 
 			true
 		)
@@ -86,7 +85,7 @@ const App = () => {
 
 	const saveData = (data, save) => {
 
-		if ( save ) {
+		if (save) {
 			setView(false)
 			setTemperature(data.main.temp.toFixed(0))
 			setHumidity(data.main.humidity.toFixed(0))
@@ -103,27 +102,31 @@ const App = () => {
 
 	const resultErrors  = <React.Fragment>
 					{
-						view &&  
+					view &&  
+						<motion.div 
+							initial    ={{ opacity: 0 }}
+							animate    ={{ opacity: 1 }}
+							transition ={{ duration: 0.6 }}
+							className={classes.root}
+						>
 							<motion.div 
-								initial    ={{ opacity: 0 }}
-								animate    ={{ opacity: 1 }}
-								transition ={{ duration: 0.6 }}
+								initial    ={{ scale: 0 , y: -30 }}
+								animate    ={{ scale: 1 , y:   0 }}
+								transition ={{ duration: 0.2, delay: 0}}
 								className={classes.root}
 							>
-								<motion.div 
-									initial    ={{ scale: 0 , y: -30 }}
-									animate    ={{ scale: 1 , y:   0 }}
-									transition ={{ duration: 0.2, delay: 0}}
-									className={classes.root}
-								>
-									{ 	
-										errors 
-											? <h4 className={classes.message} style={{ color:'#F1453D'}} >
-												Something went wrong please try again
-											  </h4> 
-											: <h3 className={classes.message}>Search city, town or place</h3>}
-								</motion.div>
+								{ 	
+								errors 
+									? 	<h4 className={classes.message} style={{ color:'#F1453D'}} >
+											Something went wrong please try again
+										</h4> 
+
+									: 	<h3 className={classes.message}>
+											Search city, town or place
+										</h3>
+								}
 							</motion.div>
+						</motion.div>
 					}
 				</React.Fragment>
 
@@ -132,18 +135,18 @@ const App = () => {
 					<React.Fragment>
 						
 						{
-							!view && 
-								<MainVue
-									icon={icon}
-									typeUnit={typeUnit}
-									forecast={forecast}
-									humidity={humidity}
-									windSpeed={windSpeed}
-									feelslike={feelslike}
-									temperature={temperature}
-									currentPlace={currentPlace}
-									descriptions={descriptions}
-								/>
+						!view && 
+							<MainVue
+								icon={icon}
+								typeUnit={typeUnit}
+								forecast={forecast}
+								humidity={humidity}
+								windSpeed={windSpeed}
+								feelslike={feelslike}
+								temperature={temperature}
+								currentPlace={currentPlace}
+								descriptions={descriptions}
+							/>
 						}
 					</React.Fragment>
 	
@@ -182,25 +185,23 @@ const App = () => {
 						</div>
 					</div>
 					<div className={classes.main_Vue}>
-					{
+						{
 						forecast &&
-						<Forecast forecastArr={forecastArr} view={view} errors={errors}/>
-					}
+							<Forecast forecastArr={forecastArr} view={view} errors={errors}/>
+						}
 				          { resultErrors }
 						{ resultMain }
 					</div>
 					<div className={classes.footer}>
 						{
-							!view &&
-								<BottomNav 
+						!view &&
+							<BottomNav 
 								setForecast={setForecast} 
 								search={search} 
 								value={value}
 								setValue={setValue}
-
-
 								forecastGetData={forecastGetData}
-								/>
+							/>
 						}
 					</div>
 				</div>
@@ -218,11 +219,11 @@ export default App
 const useStyles = makeStyles((theme) => ({
 
 	main:{
+		width: '100vw',
 		color:'#FFFFFF',
 		display: 'flex',
 		fontSize: 'calc(10px + 2vmin)',
 		textAlign: 'center',
-		width: '100vw',
 		alignItems: 'center',
 		flexDirection: 'column',
 		justifyContent: 'center',
@@ -232,8 +233,8 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	mainContainer: {
-		height: `calc(100vh - 40px)`,
 		width: `calc(100vw - 40px)`,
+		height: `calc(100vh - 40px)`,
 	},
 
 	header: {
@@ -255,11 +256,11 @@ const useStyles = makeStyles((theme) => ({
 
 	mainHeaderCenter: {
 		height: '100%',
-		display: 'flex',
-		alignItems:  'flex-end',
 		width: '60%',
+		display: 'flex',
 		minWidth: 210,
 		maxWidth: 370,
+		alignItems:  'flex-end',
 	},
 
 	main_Header_Buttons_cont:{
@@ -271,9 +272,9 @@ const useStyles = makeStyles((theme) => ({
 		height: '100%',
 		width: '20%',
 		display: 'flex',
+		maxWidth: 60,
 		alignItems:  'center',
 		justifyContent:  'center',
-		maxWidth: 60,
 	},
 	
 	footer: {

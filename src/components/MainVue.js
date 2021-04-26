@@ -10,9 +10,7 @@ const MainVue = (props) => {
 
 
 
-     const { temperature, humidity, feelslike, 
-             windSpeed, icon, typeUnit, 
-             descriptions, currentPlace, forecast } = props
+     const { temperature, humidity, feelslike, windSpeed, icon, typeUnit, descriptions, currentPlace, forecast } = props
 
      const classes = useStyles()
 
