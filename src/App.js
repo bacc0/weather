@@ -240,6 +240,7 @@ const useStyles = makeStyles((theme) => ({
 		height: 110,
 		display: 'flex',
 		margin: '20px 0 60px',
+		justifyContent: 'center',
 
 		'@media (min-width : 720px)': { 
 			height: 82,
@@ -249,6 +250,7 @@ const useStyles = makeStyles((theme) => ({
 	mainHeaderLeft: {
 		height: '100%',
 		width: '20%',
+		maxWidth: 60,
 	},
 
 	mainHeaderCenter: {
@@ -257,6 +259,7 @@ const useStyles = makeStyles((theme) => ({
 		alignItems:  'flex-end',
 		width: '60%',
 		minWidth: 210,
+		maxWidth: 370,
 	},
 
 	main_Header_Buttons_cont:{
@@ -270,6 +273,7 @@ const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		alignItems:  'center',
 		justifyContent:  'center',
+		maxWidth: 60,
 	},
 	
 	footer: {
