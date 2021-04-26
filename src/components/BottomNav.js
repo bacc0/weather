@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { makeStyles, BottomNavigation, BottomNavigationAction } from '@material-ui/core'
 import TodayIcon from '@material-ui/icons/Today'
 import DateRangeIcon from '@material-ui/icons/DateRange'
@@ -9,12 +9,9 @@ const BottomNav = ( props ) => {
 
 
      
-     const {setForecast, search, value, setValue } = props
+     const { setForecast, value, setValue, forecastGetData } = props
 
      const classes = useStyles();
-
-     useEffect(() => { setValue(0) }, [search])
-  
 
      return (
           <motion.div 
@@ -35,6 +32,7 @@ const BottomNav = ( props ) => {
                          onChange={(e, newValue) => {
                               setValue(newValue)
                               setForecast(newValue === 0 ? false : true)
+                              forecastGetData()
                          }}
                          showLabels
                          className={classes.rootBottomNavigationMenu}

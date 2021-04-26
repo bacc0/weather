@@ -16,7 +16,6 @@ const App = () => {
 
 	const classes = useStyles()
 
-	const [dataWeather ,  setDataWeather] = useState(null)
 	const [temperature ,  setTemperature] = useState(0)
 	const [humidity    ,     setHumidity] = useState(0)
 	const [feelslike   ,    setFeelslike] = useState(0)
@@ -33,17 +32,13 @@ const App = () => {
 	const [forecastArr ,  setForecastArr] = useState({})
 	const [value       ,        setValue] = useState(0);
 
-
-
 	const API_KEY ='b1fdaa13bc3fcfdccc5f3d96033840ab'
-
-	// const units = typeUnit === 'Imperial' ? 'imperial' : 'metric'
 
 	useEffect(() => { setForecast(false) }, [search])
 
 	const city = search
 
-	const fetchData = ( api, type ) => {
+	const fetchData = ( api, type, save ) => {
 
 		fetch(api)
 			.then(res => res.json())
@@ -53,49 +48,58 @@ const App = () => {
 					setView(true)
 				} else {
 					if ( type === 'forecast'){ setForecastArr(data) }
-					if ( type === 'search'){ setDataWeather(data) }
 					setErrors(false)
+
+			saveData(data, save)
+
 				}
 			})
 	}
 
-	useEffect(() => { 
-
-		if (!view ){
-			fetchData(`http://api.openweathermap.org/data/2.5/weather?q=${currentCity}&units=${typeUnit === 'Imperial' ? 'imperial' : 'metric'}&appid=${API_KEY}`, 'search') 
-			setValue(0)
-		} 
-	}, [typeUnit])
-
 	const getData = () => {
 
-		fetchData(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${typeUnit === 'Imperial' ? 'imperial' : 'metric'}&appid=${API_KEY}`, 'search')
+		fetchData(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${typeUnit === 'Imperial' ? 'imperial' : 'metric'}&appid=${API_KEY}`, 
+			'search', 
+			true
+		)
 		setSearch('')
+	}
+	
+	const unitsGetData = (units) => { 
+
+		if (!view ){
+			fetchData(`http://api.openweathermap.org/data/2.5/weather?q=${currentCity}&units=${units}&appid=${API_KEY}`, 
+				'search', 
+				true
+			) 
+			setValue(0)
+		} 
 	}
 	
 	const forecastGetData = () => {
 
-		fetchData(`http://api.openweathermap.org/data/2.5/forecast?q=${currentCity}&units=${typeUnit === 'Imperial' ? 'imperial' : 'metric'}&appid=${API_KEY}`, 'forecast')
+		fetchData(`http://api.openweathermap.org/data/2.5/forecast?q=${currentCity}&units=${typeUnit === 'Imperial' ? 'imperial' : 'metric'}&appid=${API_KEY}`, 
+			'forecast', 
+			false
+		)
 	}
 
-	useEffect(() => { if (forecast){ forecastGetData() } }, [forecast])
+	const saveData = (data, save) => {
 
-	useEffect(() => {
-
-		if ( dataWeather !==  null ) {
+		if ( save ) {
 			setView(false)
-			setTemperature(dataWeather.main.temp.toFixed(0))
-			setHumidity(dataWeather.main.humidity.toFixed(0))
-			setFeelslike(dataWeather.main.feels_like.toFixed(0))
-			setWindSpeed(dataWeather.wind.speed.toFixed(0))
-			setCurrentCity(dataWeather.name)
-			const tempIcon = `http://openweathermap.org/img/wn/${dataWeather.weather[0].icon}@2x.png`
-			setIcon(tempIcon)
-			setDescriptions(dataWeather.weather[0].description)
-			setCurrentPlace(`${dataWeather.name} ${dataWeather.sys.country}` )
+			setTemperature(data.main.temp.toFixed(0))
+			setHumidity(data.main.humidity.toFixed(0))
+			setFeelslike(data.main.feels_like.toFixed(0))
+			setWindSpeed(data.wind.speed.toFixed(0))
+			setCurrentCity(data.name)
+			setIcon(`http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`)
+			setDescriptions(data.weather[0].description)
+			setCurrentPlace(`${data.name} ${data.sys.country}` )
 		}
+	}
 
-	}, [dataWeather])
+	useEffect(() => { setValue(0) }, [search])
 
 	const resultErrors  = <React.Fragment>
 					{
@@ -164,7 +168,16 @@ const App = () => {
 						</div>
 						<div className={classes.mainHeaderRight_Switch}>
 							<div className={classes.switch}>
-								<Switch typeUnit={typeUnit} setTypeUnit={setTypeUnit} setView={setView} setForecast={setForecast}/>
+								<Switch 
+
+								unitsGetData={unitsGetData}
+								view={view}
+								currentCity={currentCity}
+								API_KEY={API_KEY}
+																
+								
+								
+								typeUnit={typeUnit} setTypeUnit={setTypeUnit} setView={setView} setForecast={setForecast}/>
 							</div>														
 						</div>
 					</div>
@@ -184,6 +197,9 @@ const App = () => {
 								search={search} 
 								value={value}
 								setValue={setValue}
+
+
+								forecastGetData={forecastGetData}
 								/>
 						}
 					</div>
