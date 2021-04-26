@@ -5,4 +5,7 @@ https://weather4app.netlify.app
 
 
 
-![ezgif com-resize-2](https://user-images.githubusercontent.com/37631578/116152479-df57f980-a6dd-11eb-9024-db4b4bc5496b.gif)
+
+
+![ezgif com-add-text](https://user-images.githubusercontent.com/37631578/116153499-50e47780-a6df-11eb-8dc0-44865902542b.gif)
+
