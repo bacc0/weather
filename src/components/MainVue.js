@@ -201,7 +201,7 @@ const useStyles = makeStyles((theme) => ({
      },
     
      up_Wrapper_Inner_center:{
-          height: 240,
+          height: 320,
           width: 300,
           margin: '0 auto 40px',
           borderRadius : '15px 15px 0 0',
@@ -214,7 +214,7 @@ const useStyles = makeStyles((theme) => ({
 
           '@media (min-width : 720px)': {
                width: 480,
-               height: 420,
+               height: 411,
                background:'rgb(0, 0, 0, 0.2)',
                margin: '10px auto 10px',
                boxShadow: '0 0 8px rgb(0, 0, 0, 0.1)',
@@ -222,6 +222,12 @@ const useStyles = makeStyles((theme) => ({
                borderLeft :'0.1px solid #1D283C',
                borderTop: '0.1px solid #1D283C',
                borderRight: '0.1px solid #1D283C',
+
+
+
+
+
+
           },
      },
 
@@ -325,7 +331,7 @@ const useStyles = makeStyles((theme) => ({
      },
 
      down_Wrapper_Inner:{
-          height: 280,
+          height: 200,
           width: 300,
           margin: '0 auto',
           background:'#2C1D52',
@@ -336,7 +342,7 @@ const useStyles = makeStyles((theme) => ({
               
                display:'flex',
                width: 480,
-               height: 160,
+               height: 170,
                borderRadius : '0',
           },
      },
@@ -409,7 +415,11 @@ const useStyles = makeStyles((theme) => ({
           width: '100%',
           height: '50%',
           textAlign: 'center',
-          fontSize : '3.2rem',
+          fontSize : '2.2rem',
+
+          '@media (min-width : 720px)': { 
+               fontSize : '3.2rem',
+          },
      },
      info_Wrapper_DOWN: {
           width: '100%',

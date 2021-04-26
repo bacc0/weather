@@ -135,8 +135,12 @@ const useStyles = makeStyles((theme) => ({
      card:{
           width: 124,
           color: '#FFFFFF',
-          marginLeft: 0,
+          margin: '30px 0 10px',
           background:'transparent',
+
+          '@media (min-width : 720px)': { 
+               margin: '30px 0 -10px',
+          },
      },
 
      temperatureContainer:{
@@ -183,9 +187,13 @@ const useStyles = makeStyles((theme) => ({
      allOt:{
           height: '13%',
           display: 'flex',
-          fontSize : '1.4rem',
+          fontSize : '1rem',
           alignItems: 'center',
           justifyContent: 'center',
+
+          '@media (min-width : 720px)': { 
+               fontSize : '1.4rem',
+          },
      },
 
      allOtLett:{
