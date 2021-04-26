@@ -58,7 +58,7 @@ const App = () => {
 
 	const getData = () => {
 
-		fetchData(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${typeUnit === 'Imperial' ? 'imperial' : 'metric'}&appid=${API_KEY}`, 
+		fetchData(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${typeUnit === 'Imperial' ? 'imperial' : 'metric'}&appid=${API_KEY}`, 
 			'search', 
 			true
 		)
@@ -68,7 +68,7 @@ const App = () => {
 	const unitsGetData = (units) => { 
 
 		if (!view ){
-			fetchData(`http://api.openweathermap.org/data/2.5/weather?q=${currentCity}&units=${units}&appid=${API_KEY}`, 
+			fetchData(`https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&units=${units}&appid=${API_KEY}`, 
 				'search', 
 				true
 			) 
@@ -78,7 +78,7 @@ const App = () => {
 	
 	const forecastGetData = () => {
 
-		fetchData(`http://api.openweathermap.org/data/2.5/forecast?q=${currentCity}&units=${typeUnit === 'Imperial' ? 'imperial' : 'metric'}&appid=${API_KEY}`, 
+		fetchData(`https://api.openweathermap.org/data/2.5/forecast?q=${currentCity}&units=${typeUnit === 'Imperial' ? 'imperial' : 'metric'}&appid=${API_KEY}`, 
 			'forecast', 
 			false
 		)
@@ -93,7 +93,7 @@ const App = () => {
 			setFeelslike(data.main.feels_like.toFixed(0))
 			setWindSpeed(data.wind.speed.toFixed(0))
 			setCurrentCity(data.name)
-			setIcon(`http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`)
+			setIcon(`https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`)
 			setDescriptions(data.weather[0].description)
 			setCurrentPlace(`${data.name} ${data.sys.country}` )
 		}
@@ -121,7 +121,7 @@ const App = () => {
 											? <h4 className={classes.message} style={{ color:'#F1453D'}} >
 												Something went wrong please try again
 											  </h4> 
-											: <h3 className={classes.message}>Search the city, town or place</h3>}
+											: <h3 className={classes.message}>Search city, town or place</h3>}
 								</motion.div>
 							</motion.div>
 					}
@@ -237,12 +237,12 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	header: {
-		height: 100,
+		height: 110,
 		display: 'flex',
 		margin: '20px 0 60px',
 
 		'@media (min-width : 720px)': { 
-			height: 62,
+			height: 82,
 		}
 	},
 

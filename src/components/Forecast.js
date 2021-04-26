@@ -113,15 +113,13 @@ const useStyles = makeStyles((theme) => ({
 
      paper: {
           width: 300,
-          height: 522,
+          height: 520,
           display: 'flex',
           justifyContent: 'space-between',
-          margin: '-22px auto 0',
+          margin: '-20px auto 0',
           background:'rgb(0, 0, 0, 0.2)',
           borderRadius: '15px 15px 0 0',
           backdropFilter  : 'blur(6px)',
-          boxShadow: '0 0 8px rgb(0, 0, 0, 0.1)',
-
           borderLeft: '0.1px solid #1D283C',
           borderTop: '0.1px solid #1D283C',
           borderRight: '0.1px solid #1D283C',
@@ -142,7 +140,7 @@ const useStyles = makeStyles((theme) => ({
      },
 
      temperatureContainer:{
-          height: '26%',
+          height: '22%',
           display: 'flex',
           fontSize:'2rem',
           alignItems: 'center',
@@ -158,7 +156,7 @@ const useStyles = makeStyles((theme) => ({
      },
 
      iconContainer:{
-          height: '14%',
+          height: '13%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
