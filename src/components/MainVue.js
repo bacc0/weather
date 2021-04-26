@@ -188,7 +188,6 @@ const useStyles = makeStyles((theme) => ({
 
      up_Wrapper:{
           width: '90%',
-          margin: '0 auto',
           display : 'flex',
           alignItems: 'flex-end',
           justifyContent: 'center',

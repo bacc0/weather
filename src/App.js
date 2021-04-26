@@ -78,13 +78,7 @@ const App = () => {
 		fetchData(`http://api.openweathermap.org/data/2.5/forecast?q=${currentCity}&units=${typeUnit === 'Imperial' ? 'imperial' : 'metric'}&appid=${API_KEY}`, 'forecast')
 	}
 
-	useEffect(() => {
-		
-		if(forecast){
-			forecastGetData()
-		}
-
-	}, [forecast])
+	useEffect(() => { if (forecast){ forecastGetData() } }, [forecast])
 
 	useEffect(() => {
 

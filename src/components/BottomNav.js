@@ -14,6 +14,7 @@ const BottomNav = ( props ) => {
      const classes = useStyles();
 
      useEffect(() => { setValue(0) }, [search])
+  
 
      return (
           <motion.div 
