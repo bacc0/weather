@@ -39,9 +39,9 @@ const MainVue = (props) => {
                     </div>
                     <div className={classes.them_Deg}>
                          <div className={classes.up_Wrapper_Inner_1}>
-                              <div>
+                              
+                              <div className={classes.thermometer}>
                                    <Thermometer
-
                                         theme='light'
                                         value={temperature}
                                         max='100'
@@ -207,7 +207,8 @@ const useStyles = makeStyles((theme) => ({
           width: 300,
           margin: '0 auto 40px',
           borderRadius : '15px 15px 0 0',
-          background:'transparent',
+          background:'rgb(0, 0, 0, 0.2)',
+          // background:'transparent',
           display:'block',
           boxShadow: '0 0 0 rgb(0, 0, 0, 0)',
           borderBottom: '0px solid ',
@@ -229,12 +230,17 @@ const useStyles = makeStyles((theme) => ({
 
      city: {
           width: '100%',
-          height: '10%',
-          marginTop: 0, 
+          height: 40,
+          marginTop: 10, 
+          marginBottom:-16,
+          fontSize:'calc(6px + 2vmin)',
+
 
           '@media (min-width : 720px)': {
                marginTop: 16, 
-               marginBottom:-16
+               marginBottom:-16,
+               fontSize:'calc(10px + 2vmin)',
+
           },
      },
 
@@ -245,6 +251,14 @@ const useStyles = makeStyles((theme) => ({
           display : 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+     },
+
+     thermometer:{
+          display : 'none',
+
+          '@media (min-width : 720px)': { 
+                display : 'initial',
+          },
      },
 
      temperature: {
@@ -316,13 +330,12 @@ const useStyles = makeStyles((theme) => ({
           height: 280,
           width: 300,
           margin: '0 auto',
-          borderRadius : '15px 15px 0 0',
           background:'#2C1D52',
           display:'block',
           boxShadow: '0 0 8px rgb(0, 0, 0, 0.1)',
 
           '@media (min-width : 720px)': {
-               background:'#2C1D52',
+              
                display:'flex',
                width: 480,
                height: 160,

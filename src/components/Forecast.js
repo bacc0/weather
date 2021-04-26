@@ -78,7 +78,6 @@ const Forecast = (props) => {
                                    />
                               </div> 
                               <div className={classes.allOtLett}>Wind speed </div>
-                        
                          </Card>
                     
                     :    null
@@ -114,15 +113,18 @@ const useStyles = makeStyles((theme) => ({
 
      paper: {
           width: 300,
-          height: 500,
+          height: 522,
           display: 'flex',
           justifyContent: 'space-between',
-          // backgroundColor: 'transparent',
-          margin: '0 auto',
+          margin: '-22px auto 0',
           background:'rgb(0, 0, 0, 0.2)',
           borderRadius: '15px 15px 0 0',
           backdropFilter  : 'blur(6px)',
+          boxShadow: '0 0 8px rgb(0, 0, 0, 0.1)',
 
+          borderLeft: '0.1px solid #1D283C',
+          borderTop: '0.1px solid #1D283C',
+          borderRight: '0.1px solid #1D283C',
           '@media (min-width : 720px)': { 
                width: 480,
                height: 582,

@@ -203,7 +203,6 @@ const App = () => {
 								/>
 						}
 					</div>
-					{/* <div className={classes.separator}/>		 */}
 				</div>
 			</div>
 		</div>
@@ -238,18 +237,12 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	header: {
-		height: '16%',
+		height: 100,
 		display: 'flex',
 		margin: '20px 0 60px',
 
-		'@media (min-width : 520px)': { 
-               margin: '40px 0 50px',
-          },
-		'@media (min-width : 620px)': { 
-               margin: '30px 0 20px',
-          },
 		'@media (min-width : 720px)': { 
-			margin: '20px 0 0px',
+			height: 62,
 		}
 	},
 
@@ -283,10 +276,6 @@ const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		justifyContent:  'center',
 	},
-
-	// separator:{
-	// 	height: 40
-	// },
 	
 	app:{
 		color:'#FFCA28',
@@ -304,6 +293,6 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	message:{
-		margin: '80px 0 0 -10px'
+		margin: '164px 0 0 -10px'
 	}
 }))
