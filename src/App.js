@@ -21,7 +21,7 @@ const App = () => {
 	const [feelslike   ,    setFeelslike] = useState(0)
 	const [windSpeed   ,    setWindSpeed] = useState(0)
 	const [icon        ,         setIcon] = useState('')
-	const [typeUnit    ,     setTypeUnit] = useState('Imperial')
+	const [typeUnit    ,     setTypeUnit] = useState('Metric')
 	const [descriptions, setDescriptions] = useState('')
 	const [search      ,       setSearch] = useState('')
 	const [errors      ,       setErrors] = useState(false)
