@@ -18,11 +18,9 @@ const BottomNav = ( props ) => {
                initial    ={{ opacity: 0 }}
                animate    ={{ opacity: 1 }}
                transition ={{ duration: 0.4 }}
-               className={classes.root}
+               className={classes.bottomNav_Container}
           >
                <motion.div 
-                    
-                    className={classes.root}
                     initial    ={{ scale: 0 , y: -270 }}
                     animate    ={{ scale: 1 , y:    0 }}
                     transition ={{ duration: .2}}
@@ -35,7 +33,7 @@ const BottomNav = ( props ) => {
                               forecastGetData()
                          }}
                          showLabels
-                         className={classes.rootBottomNavigationMenu}
+                         className={classes.bottomNavigation}
                     >
                          <BottomNavigationAction className={classes.buttonColor} label='Today' icon={<TodayIcon />} />
                          <BottomNavigationAction className={classes.buttonColor} label='Forecast' icon={<DateRangeIcon />} />
@@ -53,7 +51,11 @@ export default  BottomNav
 
 const useStyles = makeStyles({
 
-     rootBottomNavigationMenu: {
+     bottomNav_Container: {
+          marginBottom: 34,
+     },
+
+     bottomNavigation: {
           width: 300,
           backgroundColor: '#E0E0E0',
          
