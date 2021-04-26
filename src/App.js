@@ -37,7 +37,7 @@ const App = () => {
 
 	const API_KEY ='b1fdaa13bc3fcfdccc5f3d96033840ab'
 
-	const units = typeUnit === 'Imperial' ? 'imperial' : 'metric'
+	// const units = typeUnit === 'Imperial' ? 'imperial' : 'metric'
 
 	useEffect(() => { setForecast(false) }, [search])
 
@@ -62,20 +62,20 @@ const App = () => {
 	useEffect(() => { 
 
 		if (!view ){
-			fetchData(`http://api.openweathermap.org/data/2.5/weather?q=${currentCity}&units=${units}&appid=${API_KEY}`, 'search') 
+			fetchData(`http://api.openweathermap.org/data/2.5/weather?q=${currentCity}&units=${typeUnit === 'Imperial' ? 'imperial' : 'metric'}&appid=${API_KEY}`, 'search') 
 			setValue(0)
 		} 
 	}, [typeUnit])
 
 	const getData = () => {
 
-		fetchData(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${API_KEY}`, 'search')
+		fetchData(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${typeUnit === 'Imperial' ? 'imperial' : 'metric'}&appid=${API_KEY}`, 'search')
 		setSearch('')
 	}
 	
 	const forecastGetData = () => {
 
-		fetchData(`http://api.openweathermap.org/data/2.5/forecast?q=${currentCity}&units=${units}&appid=${API_KEY}`, 'forecast')
+		fetchData(`http://api.openweathermap.org/data/2.5/forecast?q=${currentCity}&units=${typeUnit === 'Imperial' ? 'imperial' : 'metric'}&appid=${API_KEY}`, 'forecast')
 	}
 
 	useEffect(() => {

@@ -1,5 +1,5 @@
 import React  from 'react'
-import { makeStyles, Card, Paper } from '@material-ui/core/'
+import { makeStyles, Card } from '@material-ui/core/'
 import AnimatedNumber from 'animated-number-react'
 
 
