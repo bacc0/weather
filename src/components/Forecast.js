@@ -199,6 +199,7 @@ const useStyles = makeStyles((theme) => ({
      allOtLett:{
           marginTop : -13,
           fontSize : '0.6rem',
+          fontWeight : 200
      },
 }))
 

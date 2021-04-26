@@ -97,7 +97,7 @@ const MainVue = (props) => {
                                              />
                                         </div>
                                         <div className={classes.info_Wrapper_DOWN}>
-                                        Feels like 
+                                             Feels like 
                                         </div>
                                    </div>
                               </div>
@@ -165,8 +165,8 @@ const MainVue = (props) => {
                          <Fragment>
                               <div  className={classes.paper1}>
                                    <div >
-                                      { upper_Part }
-                                       { lower_Part }                  
+                                        { upper_Part }
+                                        { lower_Part }                  
                                    </div>
                               </div>
                          </Fragment>
@@ -238,12 +238,16 @@ const useStyles = makeStyles((theme) => ({
           marginTop: 10, 
           marginBottom:-16,
           fontSize:'calc(6px + 2vmin)',
+          fontWeight : 300,
+
 
 
           '@media (min-width : 720px)': {
                marginTop: 16, 
                marginBottom:-16,
                fontSize:'calc(10px + 2vmin)',
+               fontWeight : 400,
+
 
           },
      },
@@ -268,15 +272,32 @@ const useStyles = makeStyles((theme) => ({
      temperature: {
           marginLeft: 20,
           fontSize: '7.2rem',
+          fontWeight: 200,
+
           '@media (min-width : 720px)': { 
                fontSize: '12rem',
                marginLeft: 40,
           },
      },
 
+     deg:{
+          margin: '-70px 0 0 -24px',
+          fontSize: '4.5rem',
+          fontWeight: 100,
+
+
+          '@media (min-width : 720px)': { 
+               fontSize: '8rem',
+               margin: '-100px 0 0 -44px',
+
+          },
+     },
+
      them_Deg:{
           display : 'flex',
           justifyContent: 'space-between',
+          fontWeight: 300,
+
      },
 
      up_Wrapper_Inner_1:{
@@ -299,21 +320,11 @@ const useStyles = makeStyles((theme) => ({
 
      },
 
-     deg:{
-          marginTop: -60,
-          fontSize: '3.2rem',
-          '@media (min-width : 720px)': { 
-               fontSize: '6rem',
-               marginTop: -110,
-          },
-     },
-
      CFcontainer: {
-          top: 0,
-          position: 'relative',
+          margin: '0px 0px 0px -50px',
 
           '@media (min-width : 720px)': {  
-               top: 10,
+               margin: '15px 0px -15px -12px',
           },
      },
 
@@ -416,6 +427,7 @@ const useStyles = makeStyles((theme) => ({
           height: '50%',
           textAlign: 'center',
           fontSize : '2.2rem',
+          fontWeight : 100,
 
           '@media (min-width : 720px)': { 
                fontSize : '3.2rem',
@@ -426,12 +438,14 @@ const useStyles = makeStyles((theme) => ({
           height: '50%',
           textAlign: 'center',
           fontSize : '0.9rem',
+          fontWeight : 100,
+
      },
 
      pic:{
           width: 74,
           height: 74,
-          marginBottom: -20,
+          margin:' -20px 0 -19px',
      },
 }))
 

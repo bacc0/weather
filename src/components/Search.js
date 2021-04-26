@@ -48,9 +48,11 @@ const useStyles = makeStyles((theme) => ({
           fontSize: '1rem',
           borderRadius: 4, 
           backgroundColor: '#FFCA28',
+          fontWeight : 500,
+
  
           '&:hover': {
-           backgroundColor: '#FFD249',
+               backgroundColor: '#FFD249',
           },
           '&:active': {
                backgroundColor: '#D09D01',
