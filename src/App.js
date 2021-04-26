@@ -203,7 +203,7 @@ const App = () => {
 								/>
 						}
 					</div>
-					<div className={classes.separator}/>		
+					{/* <div className={classes.separator}/>		 */}
 				</div>
 			</div>
 		</div>
@@ -284,9 +284,9 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent:  'center',
 	},
 
-	separator:{
-		height: 40
-	},
+	// separator:{
+	// 	height: 40
+	// },
 	
 	app:{
 		color:'#FFCA28',

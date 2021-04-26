@@ -15,9 +15,15 @@
           body {
                margin: 0px;
                font-family: "Red Hat Display", sans-serif;
-               
-               background-image: url("./backWeather.svg");
-
+               background-color:#21314F;
+               background-image: url("./backWeather.svg"), linear-gradient(rgba(119, 31, 167, 0.1), rgba(0, 0, 0, 0.5));
+               background-repeat: no-repeat;
+               background-size: cover;
+               margin-bottom: 150px
+          }
+          @media screen and (min-width: 0px) and (max-width: 720px) {
+               body { background-color: #19253b; }
+               background-image: url("./backWeather.svg"), linear-gradient(rgba(119, 31, 167, 0.8), rgba(0, 0, 0, 0.9));
           }
      </style>
 

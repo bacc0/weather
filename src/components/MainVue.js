@@ -210,7 +210,7 @@ const useStyles = makeStyles((theme) => ({
           background:'transparent',
           display:'block',
           boxShadow: '0 0 0 rgb(0, 0, 0, 0)',
-          borderBottom: '0px solid #516B9B',
+          borderBottom: '0px solid ',
           backdropFilter  : 'blur(6px)',
 
           '@media (min-width : 720px)': {
@@ -219,7 +219,7 @@ const useStyles = makeStyles((theme) => ({
                background:'rgb(0, 0, 0, 0.2)',
                margin: '10px auto 10px',
                boxShadow: '0 0 8px rgb(0, 0, 0, 0.1)',
-               borderBottom: '0.1px solid #516B9B',
+               borderBottom: '0.1px solid #4E358D',
                borderLeft :'0.1px solid #1D283C',
                borderTop: '0.1px solid #1D283C',
                borderRight: '0.1px solid #1D283C',
@@ -317,11 +317,12 @@ const useStyles = makeStyles((theme) => ({
           width: 300,
           margin: '0 auto',
           borderRadius : '15px 15px 0 0',
-          background:'#283958',
+          background:'#2C1D52',
           display:'block',
           boxShadow: '0 0 8px rgb(0, 0, 0, 0.1)',
 
           '@media (min-width : 720px)': {
+               background:'#2C1D52',
                display:'flex',
                width: 480,
                height: 160,
