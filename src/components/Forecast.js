@@ -148,7 +148,7 @@ const useStyles = makeStyles((theme) => ({
 
           '@media (min-width : 720px)': { 
                fontSize:'3.4rem',
-               },
+          },
      },
 
      temperature:{

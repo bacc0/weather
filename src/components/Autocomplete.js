@@ -45,10 +45,6 @@ export default function Asynchronous({setSearch}) {
           borderRadius: 4,
           fontSize: '1px',
           margin: '0 auto',
-          
-          '@media (max-width : 380px)': { 
-               width: 480,
-          },
      }
 
      const handelSubmit = (val) => {
