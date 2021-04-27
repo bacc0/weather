@@ -298,6 +298,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	message:{
-		margin: '164px 0 0 -10px'
+		margin: '164px 0 0 -10px',
+		fontWeight: 200
 	}
 }))
