@@ -151,7 +151,7 @@ const App = () => {
 	return (<div>
 			<div className={classes.main}>
 				<div className={classes.mainContainer}>
-					<div className={classes.header} style={{ position: 'relative', top : !view ? 0 : 60 }}>
+					<div className={classes.header} style={{ position: 'relative', top : !view ? 10 : 60 }}>
 						<div className={classes.mainHeaderLeft}></div>
 						<div className={classes.mainHeaderCenter}>
 							<div className={classes.main_Header_Buttons_cont}>
@@ -239,6 +239,7 @@ const useStyles = makeStyles((theme) => ({
 
 		'@media (min-width : 720px)': { 
 			height: 82,
+			margin: '20px 0 65px',
 		}
 	},
 
