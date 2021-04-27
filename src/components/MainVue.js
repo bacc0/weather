@@ -184,6 +184,7 @@ export default MainVue
 
 const useStyles = makeStyles((theme) => ({
 
+
      up_Wrapper:{
           width: '90%',
           display : 'flex',
@@ -222,15 +223,8 @@ const useStyles = makeStyles((theme) => ({
                borderLeft :'0.1px solid #1D283C',
                borderTop: '0.1px solid #1D283C',
                borderRight: '0.1px solid #1D283C',
-
-
-
-
-
-
           },
      },
-
 
      city: {
           width: '100%',
@@ -240,15 +234,11 @@ const useStyles = makeStyles((theme) => ({
           fontSize:'calc(6px + 2vmin)',
           fontWeight : 300,
 
-
-
           '@media (min-width : 720px)': {
                marginTop: 16, 
                marginBottom:-16,
                fontSize:'calc(10px + 2vmin)',
                fontWeight : 400,
-
-
           },
      },
 
