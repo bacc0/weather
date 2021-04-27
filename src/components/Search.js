@@ -21,7 +21,7 @@ const Search = (props) => {
                     <button 
                          onClick={handleClick}
                          className={classes.button}
-                         disabled={search === ''  ? true : false}
+                         disabled={search === '' ? true : false}
                     >
                          SEARCH
                     </button>

@@ -36,7 +36,7 @@ const App = () => {
 
 	useEffect(() => { setForecast(false) }, [search])
 
-	const fetchData = ( api, type, save ) => {
+	const fetchData = ( api, type, toSave ) => {
 
 		fetch(api)
 			.then(res => res.json())
@@ -45,11 +45,9 @@ const App = () => {
 					setErrors(true)
 					setView(true)
 				} else {
+					saveData(data, toSave)
 					if ( type === 'forecast'){ setForecastArr(data) }
 					setErrors(false)
-
-			saveData(data, save)
-
 				}
 			}
 		)
@@ -83,9 +81,9 @@ const App = () => {
 		)
 	}
 
-	const saveData = (data, save) => {
+	const saveData = (data, toSave) => {
 
-		if (save) {
+		if (toSave) {
 			setView(false)
 			setTemperature(data.main.temp.toFixed(0))
 			setHumidity(data.main.humidity.toFixed(0))
@@ -154,10 +152,9 @@ const App = () => {
 			<div className={classes.main}>
 				<div className={classes.mainContainer}>
 					<div className={classes.header} style={{ position: 'relative', top : !view ? 0 : 60 }}>
-							<div className={classes.mainHeaderLeft}></div>
-							<div className={classes.mainHeaderCenter}>
+						<div className={classes.mainHeaderLeft}></div>
+						<div className={classes.mainHeaderCenter}>
 							<div className={classes.main_Header_Buttons_cont}>
-
 								<Search
 									typeUnit={typeUnit}
 									setTypeUnit={setTypeUnit}
@@ -172,15 +169,12 @@ const App = () => {
 						<div className={classes.mainHeaderRight_Switch}>
 							<div className={classes.switch}>
 								<Switch 
-
-								unitsGetData={unitsGetData}
-								view={view}
-								currentCity={currentCity}
-								API_KEY={API_KEY}
-																
-								
-								
-								typeUnit={typeUnit} setTypeUnit={setTypeUnit} setView={setView} setForecast={setForecast}/>
+									unitsGetData={unitsGetData}
+									view={view}
+									currentCity={currentCity}
+									API_KEY={API_KEY}
+									typeUnit={typeUnit} setTypeUnit={setTypeUnit} setView={setView} setForecast={setForecast}
+								/>
 							</div>														
 						</div>
 					</div>
