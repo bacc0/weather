@@ -3,7 +3,7 @@ To the App
 
 .
 
-https://weather4app.netlify.app
+https://app4weather.netlify.app
 
 
 
