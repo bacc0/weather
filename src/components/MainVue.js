@@ -213,7 +213,6 @@ const useStyles = makeStyles((theme) => ({
           backdropFilter  : 'blur(6px)',
 
           '@media (min-width : 720px)': {
-               width: 480,
                width: 410,
                height: 411,
                background:'rgb(0, 0, 0, 0.2)',
