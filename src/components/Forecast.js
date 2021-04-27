@@ -118,7 +118,7 @@ const useStyles = makeStyles((theme) => ({
           justifyContent: 'space-between',
           margin: '-20px auto 0',
           background:'rgb(0, 0, 0, 0.2)',
-          borderRadius: '15px 15px 0 0',
+          borderRadius: '2px 2px 0 0',
           backdropFilter  : 'blur(6px)',
           borderLeft: '0.1px solid #1D283C',
           borderTop: '0.1px solid #1D283C',

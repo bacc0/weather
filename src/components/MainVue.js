@@ -205,9 +205,8 @@ const useStyles = makeStyles((theme) => ({
           height: 320,
           width: 300,
           margin: '0 auto 40px',
-          borderRadius : '15px 15px 0 0',
+          borderRadius: '2px 2px 0 0',
           background:'rgb(0, 0, 0, 0.2)',
-          // background:'transparent',
           display:'block',
           boxShadow: '0 0 0 rgb(0, 0, 0, 0)',
           borderBottom: '0px solid ',
@@ -344,7 +343,6 @@ const useStyles = makeStyles((theme) => ({
                display:'flex',
                width: 410,
                height: 170,
-               borderRadius : '0',
           },
      },
 

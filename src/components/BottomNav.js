@@ -35,8 +35,18 @@ const BottomNav = ( props ) => {
                          showLabels
                          className={classes.bottomNavigation}
                     >
-                         <BottomNavigationAction className={classes.buttonColor} label='Today' icon={<TodayIcon />} />
-                         <BottomNavigationAction className={classes.buttonColor} label='Forecast' icon={<DateRangeIcon />} />
+                         <BottomNavigationAction 
+                              style={{ maxWidth: '50%'}}
+                              className={classes.buttonColor} 
+                              label='Today' 
+                              icon={<TodayIcon />} 
+                         />
+                         <BottomNavigationAction 
+                              style={{ maxWidth: '50%'}}
+                              className={classes.buttonColor} 
+                              label='Forecast' 
+                              icon={<DateRangeIcon />} 
+                         />
                     </BottomNavigation>
                </motion.div>
           </motion.div>
@@ -58,8 +68,7 @@ const useStyles = makeStyles({
      bottomNavigation: {
           width: 300,
           backgroundColor: '#E0E0E0',
-         
-          borderRadius : '0 0 15px 15px',
+          borderRadius: '0 0 2px 2px',
 
           '@media (min-width : 720px)': { 
                height: 70,
@@ -68,5 +77,6 @@ const useStyles = makeStyles({
      },
      buttonColor:{
           color: '#948D8D',
+          width:'100%'
      }
 })
