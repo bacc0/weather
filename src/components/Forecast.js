@@ -123,8 +123,9 @@ const useStyles = makeStyles((theme) => ({
           borderLeft: '0.1px solid #1D283C',
           borderTop: '0.1px solid #1D283C',
           borderRight: '0.1px solid #1D283C',
+
           '@media (min-width : 720px)': { 
-               width: 480,
+               width: 410,
                height: 582,
                margin: '0 auto',
                justifyContent: 'center',
@@ -133,12 +134,13 @@ const useStyles = makeStyles((theme) => ({
 
     
      card:{
-          width: 124,
+          width: 93,
           color: '#FFFFFF',
           margin: '30px 0 10px',
           background:'transparent',
 
           '@media (min-width : 720px)': { 
+               
                margin: '30px 0 -10px',
           },
      },

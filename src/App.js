@@ -259,7 +259,7 @@ const useStyles = makeStyles((theme) => ({
 		width: '60%',
 		display: 'flex',
 		minWidth: 210,
-		maxWidth: 370,
+		maxWidth: 300,
 		alignItems:  'flex-end',
 	},
 

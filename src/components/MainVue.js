@@ -214,6 +214,7 @@ const useStyles = makeStyles((theme) => ({
 
           '@media (min-width : 720px)': {
                width: 480,
+               width: 410,
                height: 411,
                background:'rgb(0, 0, 0, 0.2)',
                margin: '10px auto 10px',
@@ -352,7 +353,7 @@ const useStyles = makeStyles((theme) => ({
           '@media (min-width : 720px)': {
               
                display:'flex',
-               width: 480,
+               width: 410,
                height: 170,
                borderRadius : '0',
           },

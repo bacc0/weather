@@ -63,7 +63,7 @@ const useStyles = makeStyles({
 
           '@media (min-width : 720px)': { 
                height: 70,
-               width: 480,
+               width: 410,
           },
      },
      buttonColor:{
