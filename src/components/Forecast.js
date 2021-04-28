@@ -1,19 +1,16 @@
-import React  from 'react'
+import React, {Fragment} from 'react'
 import { makeStyles, Card } from '@material-ui/core/'
 import AnimatedNumber from 'animated-number-react'
 
 
 
 const Forecast = (props) => {
-
-
      
      const { forecastArr, view, errors } = props
-     
 
      const classes = useStyles()
 
-     let result = ''
+     let result = <Fragment/>
 
      if (forecastArr.list !== undefined) {
 
@@ -109,8 +106,6 @@ export default Forecast
 
 const useStyles = makeStyles((theme) => ({
 
-
-
      paper: {
           width: 300,
           height: 520,
@@ -131,8 +126,6 @@ const useStyles = makeStyles((theme) => ({
                justifyContent: 'center',
           },
      },
-
-    
      card:{
           width: 93,
           color: '#FFFFFF',
@@ -144,7 +137,6 @@ const useStyles = makeStyles((theme) => ({
                margin: '30px 0 -10px',
           },
      },
-
      temperatureContainer:{
           height: '22%',
           display: 'flex',
@@ -156,18 +148,15 @@ const useStyles = makeStyles((theme) => ({
                fontSize:'3.4rem',
           },
      },
-
      temperature:{
           marginLeft: 18,
      },
-
      iconContainer:{
           height: '13%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
      },
-
      icon:{
           width :70,
           margin : '0 auto',
@@ -176,7 +165,6 @@ const useStyles = makeStyles((theme) => ({
           alignItems: 'center',
           justifyContent: 'center',
      },
-
      description:{
           color: '#6389CA',
           height: '13%',
@@ -185,7 +173,6 @@ const useStyles = makeStyles((theme) => ({
           alignItems: 'center',
           justifyContent: 'center',
      },
-
      allOt:{
           height: '13%',
           display: 'flex',
@@ -197,7 +184,6 @@ const useStyles = makeStyles((theme) => ({
                fontSize : '1.4rem',
           },
      },
-
      allOtLett:{
           marginTop : -13,
           fontSize : '0.6rem',

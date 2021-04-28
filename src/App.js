@@ -12,8 +12,6 @@ import fetch from 'cross-fetch';
 
 const App = () => {
 
-
-
 	const classes = useStyles()
 
 	const [temperature ,  setTemperature] = useState(0)
@@ -45,8 +43,8 @@ const App = () => {
 					setErrors(true)
 					setView(true)
 				} else {
-					saveData(data, toSave)
 					if ( type === 'forecast'){ setForecastArr(data) }
+					else { saveData(data, toSave) }
 					setErrors(false)
 				}
 			}
@@ -98,55 +96,52 @@ const App = () => {
 
 	useEffect(() => { setValue(0) }, [search])
 
-	const resultErrors  = <React.Fragment>
-					{
-					view &&  
-						<motion.div 
-							initial    ={{ opacity: 0 }}
-							animate    ={{ opacity: 1 }}
-							transition ={{ duration: 0.6 , delay: 1}}
-							className={classes.root}
-						>
+	const resultErrors  = ( view &&  
 							<motion.div 
-								initial    ={{ scale: 0 , y: -30 }}
-								animate    ={{ scale: 1 , y:   0 }}
-								transition ={{ duration: 0.2, delay: 1}}
+								initial    ={{ opacity: 0 }}
+								animate    ={{ opacity: 1 }}
+								transition ={{ duration: 0.6 , delay: 1}}
 								className={classes.root}
 							>
-								{ 	
-								errors 
-									? 	<h4 className={classes.message} style={{ color:'#F1453D'}} >
-											Something went wrong please try again
-										</h4> 
+								<motion.div 
+									initial    ={{ scale: 0 , y: -30 }}
+									animate    ={{ scale: 1 , y:   0 }}
+									transition ={{ duration: 0.2, delay: 1}}
+									className={classes.root}
+								>
+									{ 	
+									errors 
+										? 	<h4 className={classes.message} style={{ color:'#F1453D'}} >
+												Something went wrong please try again
+											</h4> 
 
-									: 	<h3 className={classes.message}>
-											Search city, town or place
-										</h3>
-								}
+										: 	<h3 className={classes.message}>
+												Search city, town or place
+											</h3>
+									}
+								</motion.div>
 							</motion.div>
-						</motion.div>
-					}
-				</React.Fragment>
+						)
 
-		const resultMain =
-				!errors && 
-					<React.Fragment>
-						
-						{
-						!view && 
-							<MainVue
-								icon={icon}
-								typeUnit={typeUnit}
-								forecast={forecast}
-								humidity={humidity}
-								windSpeed={windSpeed}
-								feelslike={feelslike}
-								temperature={temperature}
-								currentPlace={currentPlace}
-								descriptions={descriptions}
-							/>
-						}
-					</React.Fragment>
+		const resultMain = ( !errors && 
+							<React.Fragment>
+								
+								{
+								!view && 
+									<MainVue
+										icon={icon}
+										typeUnit={typeUnit}
+										forecast={forecast}
+										humidity={humidity}
+										windSpeed={windSpeed}
+										feelslike={feelslike}
+										temperature={temperature}
+										currentPlace={currentPlace}
+										descriptions={descriptions}
+									/>
+								}
+							</React.Fragment>
+						)
 	
 	return (<div>
 			<div className={classes.main}>
@@ -225,12 +220,10 @@ const useStyles = makeStyles((theme) => ({
 		backgroundRepeat   : 'no-repeat',
 		backgroundPosition : 'top center',
 	},
-
 	mainContainer: {
 		width: `calc(100vw - 40px)`,
 		height: `calc(100vh - 40px)`,
 	},
-
 	header: {
 		height: 110,
 		display: 'flex',
@@ -242,13 +235,11 @@ const useStyles = makeStyles((theme) => ({
 			margin: '20px 0 65px',
 		}
 	},
-
 	mainHeaderLeft: {
 		height: '100%',
 		width: '20%',
 		maxWidth: 60,
 	},
-
 	mainHeaderCenter: {
 		height: '100%',
 		width: '60%',
@@ -257,12 +248,10 @@ const useStyles = makeStyles((theme) => ({
 		maxWidth: 300,
 		alignItems:  'flex-end',
 	},
-
 	main_Header_Buttons_cont:{
 		width: '100%',
 		height: '90%',
 	},
-
 	mainHeaderRight_Switch: {
 		height: '100%',
 		width: '20%',
@@ -271,12 +260,10 @@ const useStyles = makeStyles((theme) => ({
 		alignItems:  'center',
 		justifyContent:  'center',
 	},
-	
 	footer: {
 		display: 'flex',
 		justifyContent:  'center',
 	},
-	
 	app:{
 		color:'#FFCA28',
 		display: 'flex',
@@ -286,12 +273,10 @@ const useStyles = makeStyles((theme) => ({
 		flexDirection: 'column',
 		justifyContent: 'center',
 	},
-	
 	title: {
 		marginBottom: 50,
 		marginTop: 20,
 	},
-
 	message:{
 		margin: '164px 0 0 -10px',
 		fontWeight: 200

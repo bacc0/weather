@@ -5,8 +5,6 @@ import { withStyles, FormGroup, FormControlLabel, Switch } from '@material-ui/co
 
 const  SwitchEXPORT = ( props ) => {
 
-
-
      const { typeUnit, setTypeUnit, setForecast, unitsGetData } = props
 
      const [state, setState] =  useState({ checked: true })

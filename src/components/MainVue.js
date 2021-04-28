@@ -8,8 +8,6 @@ import AnimatedNumber from 'animated-number-react'
 
 const MainVue = (props) => {
 
-
-
      const { temperature, humidity, feelslike, windSpeed, icon, typeUnit, descriptions, currentPlace, forecast } = props
 
      const classes = useStyles()
@@ -160,16 +158,12 @@ const MainVue = (props) => {
                     animate    ={{ scale: 1 , y:  0 }}
                     transition ={{ duration: .2}}
                >
-               {
+                    {
                     !forecast &&
-                         <Fragment>
-                              <div  className={classes.paper1}>
-                                   <div >
-                                        { upper_Part }
-                                        { lower_Part }                  
-                                   </div>
-                              </div>
-                         </Fragment>
+                         <div  className={classes.paper1}>
+                              { upper_Part }
+                              { lower_Part }                  
+                         </div>
                     }
                </motion.div>
           </motion.div>
@@ -183,7 +177,6 @@ export default MainVue
 
 
 const useStyles = makeStyles((theme) => ({
-
 
      up_Wrapper:{
           width: '90%',
@@ -200,7 +193,6 @@ const useStyles = makeStyles((theme) => ({
                paddingTop: 0,
           },
      },
-    
      up_Wrapper_Inner_center:{
           height: 320,
           width: 300,
@@ -224,7 +216,6 @@ const useStyles = makeStyles((theme) => ({
                borderRight: '0.1px solid #1D283C',
           },
      },
-
      city: {
           width: '100%',
           height: 40,
@@ -240,7 +231,6 @@ const useStyles = makeStyles((theme) => ({
                fontWeight : 400,
           },
      },
-
      tempe_Container: {
           textAlign: 'center',
           width: '100%',
@@ -249,7 +239,6 @@ const useStyles = makeStyles((theme) => ({
           alignItems: 'center',
           justifyContent: 'center',
      },
-
      thermometer:{
           display : 'none',
 
@@ -257,7 +246,6 @@ const useStyles = makeStyles((theme) => ({
                 display : 'initial',
           },
      },
-
      temperature: {
           marginLeft: 20,
           fontSize: '7.2rem',
@@ -268,7 +256,6 @@ const useStyles = makeStyles((theme) => ({
                marginLeft: 40,
           },
      },
-
      deg:{
           margin: '-70px 0 0 -24px',
           fontSize: '4.5rem',
@@ -281,14 +268,12 @@ const useStyles = makeStyles((theme) => ({
 
           },
      },
-
      them_Deg:{
           display : 'flex',
           justifyContent: 'space-between',
           fontWeight: 300,
 
      },
-
      up_Wrapper_Inner_1:{
           width: 45,
           margin: '-90px -36px ',
@@ -298,7 +283,6 @@ const useStyles = makeStyles((theme) => ({
           },
 
      },
-     
      up_Wrapper_Inner_2:{
           width: 45,
           margin: '-43px 0',
@@ -308,7 +292,6 @@ const useStyles = makeStyles((theme) => ({
           },
 
      },
-
      CFcontainer: {
           margin: '0px 0px 0px -50px',
 
@@ -316,7 +299,6 @@ const useStyles = makeStyles((theme) => ({
                margin: '15px 0px -15px -12px',
           },
      },
-
      CF: {
           fontSize: '4rem',
 
@@ -324,12 +306,10 @@ const useStyles = makeStyles((theme) => ({
                fontSize: '2.4rem',
           },
      },
-
      down_Wrapper:{
           width: '90%',
           margin: '0 auto',
      },
-
      down_Wrapper_Inner:{
           height: 200,
           width: 300,
@@ -345,7 +325,6 @@ const useStyles = makeStyles((theme) => ({
                height: 170,
           },
      },
-
      wrapper_Inner_UP:{
           width: '100%',
           height: '50%',
@@ -357,7 +336,6 @@ const useStyles = makeStyles((theme) => ({
                height: '100%',
           },
      },
-
      inner_UP_1:{
           width: '50%',
           height: '100%',
@@ -365,7 +343,6 @@ const useStyles = makeStyles((theme) => ({
           alignItems: 'center',
           justifyContent: 'center',
      },
-
      inner_UP_2:{
           width: '50%',
           height: '100%',
@@ -373,7 +350,6 @@ const useStyles = makeStyles((theme) => ({
           alignItems: 'center',
           justifyContent: 'center',
      },
-
      down_Inner_DOWN:{
           width: '100%',
           height: '50%',
@@ -385,7 +361,6 @@ const useStyles = makeStyles((theme) => ({
                height: '100%',
           },
      },
-
      inner_DOWN_1:{
           width: '50%',
           height: '100%',
@@ -393,7 +368,6 @@ const useStyles = makeStyles((theme) => ({
           alignItems: 'center',
           justifyContent: 'center',
      },
-
      inner_DOWN_2:{
           width: '50%',
           height: '100%',
@@ -401,7 +375,6 @@ const useStyles = makeStyles((theme) => ({
           alignItems: 'center',
           justifyContent: 'center',
      },
-
      info_Wrapper: {
           width: '100%',
           height: '80%',
@@ -409,7 +382,6 @@ const useStyles = makeStyles((theme) => ({
           alignItems: 'center',
           justifyContent: 'center',
      },
-
      info_Wrapper_UP: {
           width: '100%',
           height: '50%',
@@ -429,7 +401,6 @@ const useStyles = makeStyles((theme) => ({
           fontWeight : 100,
 
      },
-
      pic:{
           width: 74,
           height: 74,

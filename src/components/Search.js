@@ -4,7 +4,6 @@ import Autocomplete from './Autocomplete'
 
 
 const Search = (props) => {
-     
 
      const { search, setSearch, getData} = props
 
@@ -49,7 +48,6 @@ const useStyles = makeStyles((theme) => ({
           borderRadius: 4, 
           backgroundColor: '#FFCA28',
           fontWeight : 500,
-
  
           '&:hover': {
                backgroundColor: '#FFD249',
@@ -58,7 +56,6 @@ const useStyles = makeStyles((theme) => ({
                backgroundColor: '#D09D01',
           },
      },
-
       switch:{
            marginTop: -22,
      }

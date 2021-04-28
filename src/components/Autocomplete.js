@@ -7,8 +7,6 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 
 export default function Asynchronous({setSearch}) {
 
-
-
      const [open, setOpen] = useState(false)
      const [options, setOptions] = useState([])
 

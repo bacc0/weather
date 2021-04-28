@@ -6,8 +6,6 @@ import { motion } from 'framer-motion'
 
 
 const BottomNav = ( props ) => {
-
-
      
      const { setForecast, value, setValue, forecastGetData } = props
 
@@ -57,14 +55,11 @@ const BottomNav = ( props ) => {
 
 export default  BottomNav
 
-
-
 const useStyles = makeStyles({
 
      bottomNav_Container: {
           marginBottom: 34,
      },
-
      bottomNavigation: {
           width: 300,
           backgroundColor: '#E0E0E0',
