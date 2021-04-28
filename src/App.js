@@ -14,21 +14,23 @@ const App = () => {
 
 	const classes = useStyles()
 
-	const [temperature ,  setTemperature] = useState(0)
+	const [icon        ,         setIcon] = useState('')
 	const [humidity    ,     setHumidity] = useState(0)
 	const [feelslike   ,    setFeelslike] = useState(0)
 	const [windSpeed   ,    setWindSpeed] = useState(0)
-	const [icon        ,         setIcon] = useState('')
-	const [typeUnit    ,     setTypeUnit] = useState('Metric')
+	const [temperature ,  setTemperature] = useState(0)
+	const [currentPlace, setCurrentPlace] = useState('')     //  current City short description
 	const [descriptions, setDescriptions] = useState('')
+
 	const [search      ,       setSearch] = useState('')    //  city name
+	const [typeUnit    ,     setTypeUnit] = useState('Metric')
 	const [errors      ,       setErrors] = useState(false)
 	const [currentCity ,  setCurrentCity] = useState('London')
-	const [currentPlace, setCurrentPlace] = useState('')     //  current City short description
+
 	const [view        ,         setView] = useState(true)   //  display temperature
+	const [value       ,        setValue] = useState(0);
 	const [forecast    ,     setForecast] = useState(false)  //  display temperatures forecast
 	const [forecastArr ,  setForecastArr] = useState({})     //  Forecast 4days data
-	const [value       ,        setValue] = useState(0);
 
 	const API_KEY ='b1fdaa13bc3fcfdccc5f3d96033840ab'
 
